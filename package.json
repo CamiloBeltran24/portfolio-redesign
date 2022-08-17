@@ -1,0 +1,23 @@
+{
+  "name": "portfolio-redesign",
+  "version": "1.0.0",
+  "description": "christian beltran frontend developer portfolio web",
+  "main": "assets/js/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass --watch assets/scss/styles.scss assets/css/styles.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CamiloBeltran24/portfolio-redesign.git"
+  },
+  "author": "Christian Camilo Beltran Fonseca <cambelf.dev@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CamiloBeltran24/portfolio-redesign/issues"
+  },
+  "homepage": "https://github.com/CamiloBeltran24/portfolio-redesign#readme",
+  "dependencies": {
+    "sass": "^1.51.0"
+  }
+}

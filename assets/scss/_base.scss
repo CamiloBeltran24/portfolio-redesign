@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+.hidden {
+  display: none;
+}
+@font-face {
+  font-family: 'billabong';
+  src: url('../font/billabong.ttf');
+}
+@font-face {
+  font-family: 'Segoe';
+  src: url('../font/Segoe.ttf');
+}
+h2,
+h3 {
+  font-family: $text-font;
+  font-size: 3rem;
+}
+p {
+  font-family: $text-font;
+  font-size: 1.6rem;
+}
+.container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 25px;
+  // background-color: $white;
+}
