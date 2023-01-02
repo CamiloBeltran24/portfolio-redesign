@@ -47,7 +47,7 @@
           }
         }
         p {
-          color: $gray;
+          color: $secondary-color;
           font-family: $secondary-font;
           font-size: 12px;
           text-transform: uppercase;
@@ -83,7 +83,7 @@
     &--item {
       width: 100%;
       height: 276px;
-      background-color: $text-color;
+      background-color: $secondary-color;
       opacity: 0.8;
       cursor: pointer;
     }

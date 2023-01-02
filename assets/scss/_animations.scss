@@ -6,3 +6,41 @@
     width: 100%;
   }
 }
+
+@keyframes title {
+  0% {
+    bottom: -80px;
+    opacity: 0;
+  } 
+  50% {
+    bottom: -40px;
+  }
+  70%{
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    bottom: 0;
+  }
+}
+
+@keyframes moveDown {
+  0% {
+    bottom: -15px;
+  }
+  50% {
+    bottom: -25px;
+  }
+  100% {
+    bottom: -15px;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

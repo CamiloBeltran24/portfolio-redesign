@@ -1,11 +1,12 @@
 .header {
   width: 100%;
-  height: $header-height;
+  height: calc($header-height + 20px);
   position: fixed;
   padding: 0 30px;
-  border-bottom: 1px solid $gray;
-  background-color: $white;
-  z-index: 10;
+  // border-bottom: 1px solid rgba($white, 0.6);
+  background-color: transparent;
+  z-index: 99;
+  transition: all 0.3s ease-in-out;
   .container {
     min-height: 100%;
     display: flex;
@@ -13,11 +14,11 @@
     align-items: center;
   }
   &__name {
-    h1 {
+    span {
       font-family: $primary-font;
-      font-size: 32px;
+      font-size: 3.5rem;
       letter-spacing: 1px;
-      color: $title-color;
+      color: $white;
     }
   }
   .navigator {
@@ -25,30 +26,76 @@
     height: $header-height;
     ul {
       display: flex;
-      justify-content: space-evenly;
+      justify-content: center;
       align-items: center;
       height: 100%;
+      gap: 20px;
       li {
         list-style: none;
         border-bottom: 1px solid transparent;
-        width: 20px;
-        height: 20px;
+        width: 22px;
+        height: 22px;
         cursor: pointer;
         &:hover {
           border-color: $black;
+        }
+        &.icon--home {
+          background: url('/assets/images/svg/home.svg') center no-repeat;
+          background-size: contain;
+          transition: all 0.5s ease-in-out;
+          border: none;
         }
         &.icon--contact {
           background: url('/assets/images/svg/messenger.svg') center no-repeat;
           transition: all 0.5s ease-in-out;
           border: none;
+          position: relative;
+          a{
+            position: absolute;
+            top: 50%;
+            right: 0;
+            padding: 7px 8px;
+            border-radius: 10px;
+            width: 0;
+            color: $white;
+            font-size: 0;
+            font-family: $text-font;
+            font-weight: 400;
+            text-decoration: none;
+            transform: translateY(-50%);
+            background-color: $green-color;
+            transition: all 0.3s ease-in-out;
+            opacity: 0;
+            z-index: -1;
+          }
           &:hover {
             border: none;
             transform: scale(1.1);
+            a {
+              width: 100px;
+              right: -100px;
+              opacity: 1;
+              z-index: 1;
+              font-size: 1.6rem;
+            }
           }
         }
         a {
           display: block;
         }
+      }
+    }
+  }
+  &.active {
+    background-color: $primary-color;
+    color: $white;
+    border-color: $primary-color;
+    -webkit-box-shadow: 0px 10px 30px 0px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0px 10px 30px 0px rgba(0,0,0,0.5);
+    box-shadow: 0px 10px 30px 0px rgba(0,0,0,0.5);
+    .header__name {
+      span {
+        color: $white;
       }
     }
   }

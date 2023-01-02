@@ -1,19 +1,90 @@
-.main {
+
+@import './_animations.scss';
+
+ .main {
   width: 100%;
-  padding-top: $header-height;
+  // padding-top: calc($header-height + 30px);
   &__content {
     width: 100%;
-    max-width: 935px;
+    height: 100vh;
+    // max-width: 935px;
+    background: url('/assets/images/png/main-background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     margin: 0 auto;
     padding: 40px 0;
+    position: relative;
+    z-index: 2;
+    .scroll-btn {
+      position: absolute;
+      bottom: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: block;
+      padding: 8px;
+      color: $white;
+      font-size: 1.6rem;
+      letter-spacing: 1.7px;
+      font-family: $primary-font;
+      text-transform: capitalize;
+      text-decoration: none;
+      font-weight: lighter;
+      cursor: pointer;
+      z-index: 10;
+      transition: all 0.3s ease-in-out;
+      border-radius: 10px;
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 15px;
+        height: 20px;
+        background-image: url('/assets/images/svg/long-arrow-down.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        left: 50%;
+        bottom: -15px;
+        transform: translateX(-50%);
+        transition: all 0.3s ease-in-out;
+        animation-name: moveDown;
+        animation-duration: 2s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-fill-mode: both;
+      }
+      &:hover {
+        font-size: 1.8rem;
+        &::after {
+          width: 20px;
+        }
+      }
+    }
+    .overlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: rgba($primary-color, 0.4);
+      z-index: 1;
+    }
     &--image {
-      width: 150px;
-      height: 150px;
+      width: 160px;
+      height: 160px;
       border-radius: 50%;
-      border: 2px solid $gray;
+      border: 2px solid $primary-color;
+      margin: 0 auto;
+      position: relative;
+      z-index: 10;
+      animation-name: fadeIn;
+      animation-duration: 2s;
+      animation-delay: 0.5s;
+      animation-timing-function: linear;
+      animation-fill-mode: both;
       img {
         width: 100%;
         height: 100%;
@@ -23,69 +94,190 @@
     }
     &--text {
       width: 100%;
-      max-width: 360px;
-      .top {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 10px;
-        h2 {
-          font-weight: 300;
-          font-size: 2.4rem;
-          color: $text-color;
-          text-transform: capitalize;
+      // max-width: 360px;
+      text-align: center;
+      padding: 20px 0;
+      position: relative;
+      z-index: 10;
+      h1 {
+        font-size: 6rem;
+        font-family: $terteary-font;
+        font-weight: lighter;
+        color: $white;
+        letter-spacing: 2px;
+        opacity: 0;
+        z-index: -1;
+        position: absolute;
+      }
+      .animate-title {
+        letter-spacing: -2px;
+        position: relative;
+        overflow: hidden;
+        color: $white;
+        span {
+          width: fit-content;
+          font-size: 6.6rem;
+          font-family: $terteary-font;
+          position: relative;
+          animation-name: title;
+          animation-duration: 1s;
+          animation-timing-function: linear;
+          animation-fill-mode: both;
+          &.space {
+            display: inline-block;
+            width: 10px;
+          }
         }
-        a {
-          text-decoration: none;
-          padding: 8px 12px;
-          border: 1px solid $gray;
-          border-radius: 5px;
-          background-color: transparent;
-          font-size: 1.2rem;
-          color: $title-color;
-          font-family: $secondary-font;
-          font-weight: 400;
+      }
+      h2 {
+        font-size: 3.5rem;
+        color: $white;
+        font-family: $primary-font;
+        font-weight: lighter;
+        opacity: 0;
+        animation-name: fadeIn;
+        animation-duration: 2s;
+        animation-delay: 0.5s;
+        animation-timing-function: linear;
+        animation-fill-mode: both;
+      }
+      p {
+        font-size: 1.8rem;
+        font-family: $text-font;
+        line-height: 26px;
+        color: $white;
+        padding: 20px 0;
+        max-width: 600px;
+        margin: 0 auto;
+        animation-name: fadeIn;
+        animation-duration: 2s;
+        animation-delay: 0.5s;
+        animation-timing-function: linear;
+        animation-fill-mode: both;
+      }
+    }
+  }
+  &__intro {
+    padding: 120px 0 60px;
+    // background-color: $primary-color;
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 70em;
+      top: 0;
+      left: 0;
+      background-image: url('/assets/images/png/cement-texture.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      // background-color: rgba($secondary-color, 0.3);
+      z-index: 1;
+    }
+    &--text{
+      text-align: center;
+      line-height: 26px;
+      padding: 0 100px 120px;
+      position: relative;
+      z-index: 10;
+      .title {
+        color: $primary-color;
+        font-family: $terteary-font;
+        font-weight: lighter;
+        font-size: 3rem;
+        letter-spacing: 1px;
+        margin-bottom: 30px;
+      }
+      p {
+        color: $primary-color;
+        font-weight: 500;
+      }
+      // background-color: $white;
+    }
+    &--columns {
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      gap: 50px;
+      background-color: $primary-color;
+      color: $white;
+      border-radius: 20px;
+      text-align: center;
+      // columns: 2;
+      position: relative;
+      position: relative;
+      z-index: 10;
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 1px;
+        height: 100%;
+        top: 0;
+        left: 50%;
+        background-color: $secondary-color;
+        transform: translateX(-50%);
+      }
+      .column {
+        width: 50%;
+        padding: 40px 0;
+        position: relative;
+        text-align: center;
+        figure {
+          max-width: 100px;
+          height: 100px;
+          margin: 0 auto;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            animation-name: fadeIn;
+            animation-duration: 2s;
+            animation-delay: 0.5s;
+            animation-timing-function: linear;
+            animation-fill-mode: both;
+          }
+        }
+        h3 {
+          font-size: 2.2rem;
+          margin: 20px 0;
+          font-family: $terteary-font;
+          font-weight: lighter;
           letter-spacing: 1px;
-          text-align: center;
-          cursor: pointer;
-          &:hover {
-            // background-color: $text-color;
+        }
+        h4 {
+          color: $green-color;
+          font-family: $text-font;
+          font-weight: 500;
+          font-size: 1.6rem;
+          text-transform: capitalize;
+          position: relative;
+          width: fit-content;
+          margin: 50px auto 10px;
+          &::after {
+            content: '';
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 1px;
+            background-color: $green-color;
+            left: 0;
+            bottom: -2px;
           }
         }
-      }
-      .middle {
-        width: 100%;
-        // max-width: 90%;
-        margin: 0 auto 10px;
+        p {
+          padding: 0 60px;
+        }
         ul {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
+          list-style: none;
           li {
-            list-style: none;
-            padding: 2px;
-            cursor: pointer;
-            .number,
-            .text {
-              font-size: 1.4rem;
-              display: inline-block;
-              font-family: $text-font;
-            }
-            .number {
-              margin-right: 0.5rem;
-            }
-          }
-        }
-      }
-      .bottom {
-        width: 100%;
-        .description {
-          p {
-            text-align: justify;
-            font-size: 1.4rem;
+            color: $white;
             font-family: $text-font;
-            text-align: justify;
+            font-size: 1.6rem;
+            padding: 5px;
           }
         }
       }
