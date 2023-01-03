@@ -18,7 +18,6 @@
       max-width: 500px;
       margin: 0 auto;
       li {
-        // height: 100%;
         list-style: none;
         display: flex;
         align-items: center;
@@ -74,7 +73,6 @@
           }
           &::before {
             width: 100%;
-            // left: 0;
           }
         }
         &.active {
@@ -92,7 +90,6 @@
           }
           &::before {
             width: 100%;
-            // left: 0;
           }
         }
       }
@@ -101,7 +98,6 @@
   &__block {
     width: 100%;
     min-height: 500px;
-    // background-color: red;
     display: grid;
     grid-template-columns: repeat(auto-fill, 265px);
     place-content: center;
