@@ -2,25 +2,28 @@
   width: 100%;
   padding: 40px 0;
   .container {
-    padding-top: 20px;
-    // border-top: 1px solid $gray;
+    height: 100%;
   }
   &__filter {
     width: 100%;
     height: 53px;
-    max-width: 500px;
-    margin: 0 auto;
+    background-color: $primary-color;
+    padding: 20px 0;
     &--container {
       display: flex;
       width: 100%;
       height: 100%;
       justify-content: space-evenly;
       align-items: center;
+      max-width: 500px;
+      margin: 0 auto;
       li {
-        height: 100%;
+        // height: 100%;
         list-style: none;
         display: flex;
         align-items: center;
+        padding: 5px;
+        position: relative;
         cursor: pointer;
         .icons__table,
         .icon,
@@ -47,14 +50,36 @@
           }
         }
         p {
-          color: $secondary-color;
-          font-family: $secondary-font;
-          font-size: 12px;
+          color: $white;
+          font-family: $text-font;
+          font-size: 1.4rem;
           text-transform: uppercase;
-          letter-spacing: 2px;
+          letter-spacing: 1px;
+        }
+        &::before{
+          content: '';
+            display: block;
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 0;
+            height: 1px;
+            background-color: $green-color;
+            transform: translate(-50%);
+            transition: all 0.3s ease-in-out;
+        }
+        &:hover {
+          p {
+            color: $green-color;
+          }
+          &::before {
+            width: 100%;
+            // left: 0;
+          }
         }
         &.active {
-          border-top: 1px solid $black;
+          position: relative;
+          color: $green-color;
           .icons__table {
             border-color: $black;
             &--cell {
@@ -62,8 +87,12 @@
             }
           }
           p {
-            color: $black;
-            font-weight: 600;
+            color: $green-color;
+            font-weight: 500;
+          }
+          &::before {
+            width: 100%;
+            // left: 0;
           }
         }
       }
@@ -74,7 +103,7 @@
     min-height: 500px;
     // background-color: red;
     display: grid;
-    grid-template-columns: repeat(auto-fill, 276px);
+    grid-template-columns: repeat(auto-fill, 265px);
     place-content: center;
     position: relative;
     gap: 30px;
@@ -82,7 +111,7 @@
     z-index: 9;
     &--item {
       width: 100%;
-      height: 276px;
+      height: 265px;
       background-color: $secondary-color;
       opacity: 0.8;
       cursor: pointer;

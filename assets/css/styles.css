@@ -35,7 +35,7 @@ p {
 
 .container {
   width: 100%;
-  max-width: 1117px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 25px;
 }
@@ -386,7 +386,7 @@ p {
   content: "";
   position: absolute;
   width: 100%;
-  height: 70em;
+  height: 75em;
   top: 0;
   left: 0;
   background-image: url("/assets/images/png/cement-texture.jpg");
@@ -409,6 +409,7 @@ p {
   font-size: 3rem;
   letter-spacing: 1px;
   margin-bottom: 30px;
+  line-height: 35px;
 }
 .main__intro--text p {
   color: #2C4251;
@@ -418,7 +419,7 @@ p {
   width: 100%;
   margin: 0 auto;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-evenly;
   gap: 50px;
   background-color: #2C4251;
@@ -506,13 +507,13 @@ p {
   padding: 40px 0;
 }
 .projects .container {
-  padding-top: 20px;
+  height: 100%;
 }
 .projects__filter {
   width: 100%;
   height: 53px;
-  max-width: 500px;
-  margin: 0 auto;
+  background-color: #2C4251;
+  padding: 20px 0;
 }
 .projects__filter--container {
   display: flex;
@@ -520,12 +521,15 @@ p {
   height: 100%;
   justify-content: space-evenly;
   align-items: center;
+  max-width: 500px;
+  margin: 0 auto;
 }
 .projects__filter--container li {
-  height: 100%;
   list-style: none;
   display: flex;
   align-items: center;
+  padding: 5px;
+  position: relative;
   cursor: pointer;
 }
 .projects__filter--container li .icons__table,
@@ -551,14 +555,33 @@ p {
   background: url("/assets/images/svg/info-circle.svg") center no-repeat;
 }
 .projects__filter--container li p {
-  color: #C1C1C1;
-  font-family: "Forum", cursive;
-  font-size: 12px;
+  color: #ffffff;
+  font-family: "Work Sans", sans-serif;
+  font-size: 1.4rem;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
+}
+.projects__filter--container li::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 0;
+  height: 1px;
+  background-color: #B6C649;
+  transform: translate(-50%);
+  transition: all 0.3s ease-in-out;
+}
+.projects__filter--container li:hover p {
+  color: #B6C649;
+}
+.projects__filter--container li:hover::before {
+  width: 100%;
 }
 .projects__filter--container li.active {
-  border-top: 1px solid #000;
+  position: relative;
+  color: #B6C649;
 }
 .projects__filter--container li.active .icons__table {
   border-color: #000;
@@ -567,14 +590,17 @@ p {
   border-color: #000;
 }
 .projects__filter--container li.active p {
-  color: #000;
-  font-weight: 600;
+  color: #B6C649;
+  font-weight: 500;
+}
+.projects__filter--container li.active::before {
+  width: 100%;
 }
 .projects__block {
   width: 100%;
   min-height: 500px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, 276px);
+  grid-template-columns: repeat(auto-fill, 265px);
   place-content: center;
   position: relative;
   gap: 30px;
@@ -583,7 +609,7 @@ p {
 }
 .projects__block--item {
   width: 100%;
-  height: 276px;
+  height: 265px;
   background-color: #C1C1C1;
   opacity: 0.8;
   cursor: pointer;
