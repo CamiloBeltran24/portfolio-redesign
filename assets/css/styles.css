@@ -849,4 +849,77 @@ footer ul li a {
   display: block;
 }
 
+.getInTouch {
+  padding: 50px 0;
+}
+.getInTouch__form {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 0px 40px;
+}
+.getInTouch__form h3 {
+  font-family: "Work Sans", sans-serif;
+  text-transform: capitalize;
+  font-weight: lighter;
+  text-align: center;
+  font-size: 4rem;
+  margin-bottom: 30px;
+  color: #2C4251;
+}
+.getInTouch__form label {
+  display: block;
+  width: 100%;
+  margin: 0 auto 15px;
+}
+.getInTouch__form label input, .getInTouch__form label textarea {
+  padding: 7px;
+  border: 1px solid #2C4251;
+  width: 100%;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+  background-color: transparent;
+  color: #2C4251;
+  font-family: "Work Sans", sans-serif;
+}
+.getInTouch__form label input::placeholder, .getInTouch__form label textarea::placeholder {
+  font-family: "Work Sans", sans-serif;
+  text-transform: capitalize;
+  transition: all 0.3s ease-in-out;
+}
+.getInTouch__form label input {
+  min-height: 38px;
+}
+.getInTouch__form label textarea {
+  padding: 10px;
+  max-width: 100%;
+  min-height: 180px;
+}
+.getInTouch__form .buttons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 20px 0;
+}
+.getInTouch__form .buttons button {
+  padding: 16px;
+  border: none;
+  outline: none;
+  position: relative;
+  cursor: pointer;
+  background-color: transparent;
+  color: #2C4251;
+  font-family: "Work Sans", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  border-radius: 12px;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid #2C4251;
+}
+.getInTouch__form .buttons button:hover {
+  background-color: #2C4251;
+  color: #ffffff;
+}
+
 /*# sourceMappingURL=styles.css.map */
