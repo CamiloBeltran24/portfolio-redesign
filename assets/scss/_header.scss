@@ -1,101 +1,40 @@
 .header {
-  width: 100%;
-  height: calc($header-height + 20px);
-  position: fixed;
-  padding: 0 30px;
+  width: 100vw;
+  padding: 20px 0;
   background-color: transparent;
-  z-index: 99;
-  transition: all 0.3s ease-in-out;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+
   .container {
-    min-height: 100%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: flex-end;
   }
-  &__name {
-    span {
-      font-family: $primary-font;
-      font-size: 3.5rem;
-      letter-spacing: 1px;
-      color: $white;
-    }
-  }
-  .navigator {
-    width: 200px;
-    height: $header-height;
+
+  nav {
     ul {
       display: flex;
-      justify-content: center;
       align-items: center;
-      height: 100%;
-      gap: 20px;
+      justify-content: center;
+      gap: 30px;
+      list-style: none;
+
       li {
-        list-style: none;
-        border-bottom: 1px solid transparent;
-        width: 22px;
-        height: 22px;
-        cursor: pointer;
-        &:hover {
-          border-color: $black;
-        }
-        &.icon--home {
-          background: url('/assets/images/svg/home.svg') center no-repeat;
-          background-size: contain;
-          transition: all 0.5s ease-in-out;
-          border: none;
-        }
-        &.icon--contact {
-          background: url('/assets/images/svg/messenger.svg') center no-repeat;
-          transition: all 0.5s ease-in-out;
-          border: none;
-          position: relative;
-          a{
-            position: absolute;
-            top: 50%;
-            right: 0;
-            padding: 7px 8px;
-            border-radius: 10px;
-            width: 0;
-            color: $white;
-            font-size: 0;
-            font-family: $text-font;
-            font-weight: 400;
-            text-decoration: none;
-            transform: translateY(-50%);
-            background-color: $green-color;
-            transition: all 0.3s ease-in-out;
-            opacity: 0;
-            z-index: -1;
-          }
-          &:hover {
-            border: none;
-            transform: scale(1.1);
-            a {
-              width: 100px;
-              right: -100px;
-              opacity: 1;
-              z-index: 1;
-              font-size: 1.6rem;
-            }
-          }
-        }
         a {
-          display: block;
+          list-style: none;
+          font-size: 1.2rem;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          color: $white;
+          text-decoration: none;
         }
       }
     }
   }
-  &.active {
-    background-color: $primary-color;
-    color: $white;
-    border-color: $primary-color;
-    -webkit-box-shadow: 0px 10px 30px 0px rgba(0,0,0,0.5);
-    -moz-box-shadow: 0px 10px 30px 0px rgba(0,0,0,0.5);
-    box-shadow: 0px 10px 30px 0px rgba(0,0,0,0.5);
-    .header__name {
-      span {
-        color: $white;
-      }
-    }
+
+  &__button {
+    padding: 0 0 0 100px;
   }
 }

@@ -4,9 +4,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Anton&family=Forum&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link
       rel="shortcut icon"
       href="assets/images/cbf-icon.ico"
@@ -18,151 +18,58 @@
   <body>
     <!-- Header -->
     <header class="header">
+
       <div class="container">
-        <div class="header__name">
-          <span>Christian Camilo</span>
-        </div>
-        <nav class="navigator">
+        <nav class="nav">
           <ul>
-            <li class="icon icon--home"><a href="#"></a></li>
-            <li class="icon icon--contact"><a href="#">Say Hi!</a></li>
+            <li ><a class="btn-underlined" href="#about-block">About</a></li>
+            <li ><a class="btn-underlined" href="">Skills</a></li>
+            <li ><a class="btn-underlined" href="">Projects</a></li>
           </ul>
         </nav>
+  
+        <div class="header__button">
+          <a href="/" class="btn">
+            <span>Contact</span>
+          </a>
+        </div>
       </div>
+
     </header>
-    <!-- End Header -->
+    
+  
+    <section class="top-content">
+      <div class="top-content__image">
+        <figure>
+          <img src="./assets/images/png/top-content.jpg" alt="">
+        </figure>
+      </div>
 
-    <!-- Main -->
-    <main class="main">
-      <div class="main__content">
-        <div class="overlay"></div>
+      <div class="top-content__title">
         <div class="container">
-          <div class="main__content--text">
-            <h1 class="title">Frontend Developer</h1>
-            <h2 class="animate-title"></h2>
-            <h2 class="subtitle">Javascript Passionate | Code Lover</h2>
-            <p class="description">
-              I'm a <em>frontend developer</em> based in <em>Bogotá, Colombia</em>, I code experiences that build your brand, and I love what I do.
-            </p>
-          </div>
+          <h1 class="titles">Frontend Developer</h1>
+          <h2>Portfolio</h2>
+        </div>
+      </div>
+    </section>
 
-          <figure class="main__content--image">
-            <img
-              src="./assets/images/christian_beltran.jpg"
-              alt="Christian Camilo Beltrán Picture"
-            />
+
+    <section id="about-block" class="about-block">
+      <div class="container">
+        <div class="about-block__image">
+          <figure>
+            <img src="./assets/images/christian_beltran.jpg" alt="">
           </figure>
         </div>
-        <a href="#projects" class="scroll-btn">go to projects</a>
-      </div>
 
-      <div class="main__intro">
-        <div class="container">
-
-          <div class="main__intro--text">
-            <h2 class="title">
-              Hi, I'm Christian Camilo, it's a Pleasure to meet you.
-            </h2>
-            <p>
-              Since I started my journey as a frontend developer I have worked for marketing agencies and collaborated with teams of talented people to create impactful digital products, I am curious, a team player, I never stop learning and I am constantly trying to improve all my skills.
-            </p>
-          </div>
-
-          <div class="main__intro--columns">
-            <div class="column">
-              <figure>
-                <img src="/assets/images/png/web-development.png" alt="">
-              </figure>
-              <div>
-                <h3>As A Frontend Developer</h3>
-                <p>I enjoy creating things from scratch by transforming ideas into code.</p>
-                <div class="tools">
-                  <ul>
-                    <h4>lenguages I speak</h4>
-                    <li>Javascript</li>
-                    <li>HTML</li>
-                    <li>CSS</li>
-                    <li>PHP</li>
-                    <li>SASS</li>
-                    <li>less</li>
-                  </ul>
-                  <ul>
-                    <h4>Some Tools</h4>
-                    <li>GIT</li>
-                    <li>Bootstrap</li>
-                    <li>Adobe XD</li>
-                    <li>Figma</li>
-                    <li>WordPress</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div class="about-block__text">
+          <span class="titles"> "Hello there" 👽</span>
+          <p>Hey !! I'm Christian Camilo, a self-motivated Colombian <em>Front-end Developer</em> 💻 | <em>JavaScript Passionate</em> ❤️ |  <em>Amateur cook</em> 🍪  | Girardoteño & Madridista. ⚽</p>
+          <p>I really enjoy turning ideas into code and transforming code into experiences and this is my crib. ☘️</p>
         </div>
-      </div>
-    </main>
-    <!-- End Main -->
-
-    <!-- PROJECTS -->
-    <section id="projects" class="projects">
-        <div class="projects__filter">
-          <div class="container">
-            <ul class="projects__filter--container">
-              <li class="filter-option">
-                <div class="icon icon--grid"></div>
-                <p>projects</p>
-              </li>
-              <li>
-                <div class="icon icon--person"></div>
-                <p>Get In Touch</p>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="container">
-          <article class="projects__block"></article>
-        </div>
-    </section>
-    <!-- END PROJECTS -->
-
-    <section class="getInTouch">
-      <div class="container">
-        <form action="https://formspree.io/f/xnqwlzpw" method="post" class="getInTouch__form">
-          <h3>let's talk</h3>
-
-            <label for="name">
-              <input type="text" name="name" id="name" required placeholder="Name">
-            </label>
-            <label for="email">
-              <input type="email" name="email" id="email" required placeholder="Email">
-            </label>
-
-            <label for="message">
-              <textarea name="message" id="message" required placeholder="Message"></textarea>
-            </label>
-
-          <div class="buttons">
-            <button type="submit">Send Message</button>
-          </div>
-        </form>
       </div>
     </section>
-    <!-- FOOTER -->
-    <footer>
-      <p>Developed By <a href="#" target="_blank" rel="noopener noreferrer">@CamiloBeltran24</a></p>
 
-      <div class="social-networks">
-        <ul>
-          <li class="icon linkedin" ><a href="https://www.linkedin.com/in/camilobeltran24/" target="_blank" rel="noopener noreferrer" ></a></li>
-          <li class="icon github"><a href="https://github.com/CamiloBeltran24" target="_blank" rel="noopener noreferrer"></a></li>
-          <li class="icon twitter"><a href="http://" target="_blank" rel="noopener noreferrer"></a></li>
-          <li class="icon instagram"><a href="http://" target="_blank" rel="noopener noreferrer"></a></li>
-        </ul>
-      </div>
-
-      <p>made with &#128154;</p>
-    </footer>
-    <!-- END FOOTER -->
 
     <script src="/assets/js/index.mjs" type="module"></script>
   </body>

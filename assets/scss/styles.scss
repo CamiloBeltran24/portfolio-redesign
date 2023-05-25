@@ -1,9 +1,6 @@
-@import './mixins';
 @import './_variables.scss';
 @import './_base.scss';
-@import './animations';
-@import './header';
-@import './main';
-@import './projects';
-@import './footer';
-@import './forms';
+@import 'header';
+@import 'top-content';
+@import 'about-block';
+

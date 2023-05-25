@@ -3,35 +3,108 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 html {
   font-size: 62.5%;
-  background-color: rgba($secondary-color, 0.1);
+  background-color: $white;
   scroll-behavior: smooth;
 }
-.hidden {
-  display: none;
-}
-@font-face {
-  font-family: 'billabong';
-  src: url('../font/billabong.ttf');
-}
-@font-face {
-  font-family: 'Segoe';
-  src: url('../font/Segoe.ttf');
-}
-h2,
-h3 {
-  font-family: $text-font;
-  font-size: 3rem;
-}
-p {
-  font-family: $text-font;
-  font-size: 1.6rem;
-}
+
 .container {
-  width: 100%;
+  width: 1200px;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 25px;
-  // background-color: $white;
+}
+
+.titles {
+  display: block;
+  font-family: $primary-font;
+  font-size: 5rem;
+  font-weight: bold;
+  color: $black;
+  line-height: 50px;
+  margin-bottom: 30px;
+}
+
+p, li {
+  font-family: $secondary-font;
+  font-size: 1.4rem;
+  line-height: 22px;
+  margin-bottom: 5px;
+}
+
+a {
+  font-family: $primary-font;
+}
+
+
+.btn {
+  font-size: 1.2rem;
+  font-family: $primary-font;
+  text-transform: uppercase;
+  color: $black;
+  display: block;
+  padding: 1em 2.5rem;
+  position: relative;
+  border-radius: 2rem;
+  background-color: $white;
+  text-decoration: none;
+  letter-spacing: 1px;
+  overflow: hidden;
+
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 150%;
+    height: 100%;
+    top: 0;
+    left: -20px;
+    background-color: $secondary-color;
+    transform:skewX(45deg) scaleX(0);
+    transition: all 0.3s ease-in-out;
+  }
+
+  span {
+    position: relative;
+    z-index: 2;
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &:hover {
+    color: #eaeaea;
+
+    &::after {
+      transform: skewX(45deg) scaleX(1);
+    }
+  }
+
+}
+
+.btn-underlined {
+  position: relative;
+
+  &::after{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    left: 0;
+    bottom: -3px;
+    background-color: currentColor;
+    transform: scaleX(0);
+    transform-origin: left;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &:hover{
+    color: $secondary-color;
+    &::after {
+      transform: scaleX(1);
+      opacity: 1;
+      // transform-origin: right;
+    }
+  }
 }

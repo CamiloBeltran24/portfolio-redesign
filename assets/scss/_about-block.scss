@@ -1,0 +1,55 @@
+.about-block {
+  background-color: white;
+  padding: 120px 0;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 50%;
+    top: 0;
+    left: -250px;
+    background-color: $white;
+    height: 100%;
+    z-index: 1;
+    transform: skew(30deg);
+  }
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+    position: relative;
+    z-index: 2;
+  }
+  &__image {
+    max-width: 200px;
+    border-radius: 50%;
+    border: 2px solid $white;
+    overflow: hidden;
+
+    figure, img {
+      width: 100%;
+      height: 100%;
+    }
+
+    img {
+      object-fit: cover;
+    }
+  }
+
+  &__text {
+    max-width: 40%;
+
+    .titles{
+      text-transform: capitalize;
+      font-weight: 700;
+      // margin-bottom: 20px;
+    }
+
+    em {
+      font-weight: 600;
+    }
+  }
+}
